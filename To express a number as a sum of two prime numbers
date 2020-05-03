@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+int checkprime (int x);
+int main()
+{
+	int i,j,num,y,z;
+	cout<<"Enter a positive integer: ";
+	cin>>num;
+	
+	
+	for(i=2;i<=num/2;i++)
+	{
+		
+		if(checkprime(i)==0)
+		{
+			for(j=2;j<num;j++)
+			{
+			
+				if(checkprime(j)==0)
+				{
+					if(i+j==num)
+					{
+						cout<<i<<"+"<<j<<"="<<num<<endl;
+					}
+					else
+					{
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+			}
+		}
+		else
+		{
+	 		continue;
+		}
+	}
+	return 0;
+}
+int checkprime (int x)
+{
+	int n,count=0;
+	for(n=2;n<=x/2;n++)
+	{
+		if(x%n==0)
+		{
+			count=1;
+			break;
+		}
+	}
+	return count;
+	
+}
